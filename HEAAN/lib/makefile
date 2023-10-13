@@ -38,7 +38,7 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: libHEAAN.a
+all: libHEAAN.a libHEaaN.so
 
 # Tool invocations
 libHEAAN.a: $(OBJS) $(USER_OBJS)
@@ -48,9 +48,16 @@ libHEAAN.a: $(OBJS) $(USER_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
+# dynamic lib
+libHEaaN.so: $(OBJS) $(USER_OBJS)
+	@echo 'Building target: $@'
+	g++ -shared -o libHEaaN.so $(OBJS) $(USER_OBJS) $(LIBS)
+	chmod -x libHEaaN.so
+	@echo 'Finished building target: $@'
+	@echo ' '
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libHEAAN.a
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libHEAAN.a libHaaN.so
 	-@echo ' '
 
 .PHONY: all clean dependents
