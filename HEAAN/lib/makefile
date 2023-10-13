@@ -57,7 +57,7 @@ libHEaaN.so: $(OBJS) $(USER_OBJS)
 	@echo ' '
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libHEAAN.a libHaaN.so
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) libHEAAN.a libHEaaN.so
 	-@echo ' '
 
 .PHONY: all clean dependents
